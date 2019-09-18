@@ -1,0 +1,47 @@
+#mapping T as the fullscreen Toggler
+
+map T toggle_fullscreen
+map [fullscreen] T toggle_fullscreen
+
+
+#Setting Color
+set recolor true
+set recolor-keephue true
+#set recolor-lightcolor "#ffffff"
+#set recolor-darkcolor "#708ca2"
+#set recolor-darkcolor "#808080"
+
+
+#Works_Best
+#set recolor-lightcolor "#d9d9d9"    # bright 85%
+set recolor-lightcolor "#cccccc"   #  bright 80%
+#set recolor-lightcolor "#a6a6a6"    # bright 65%
+#set recolor-lightcolor "#999999"    # bright 60%
+#set recolor-lightcolor "#808080"    # bright 50%
+set recolor-darkcolor "#333333"
+
+
+
+set recolor-reverse-video true
+
+#set default-bg "#2a2c2e"   #default#
+#
+#set default-bg "#1e5362"   #blackish_blue#
+set default-bg "#12323b"    #blackish_blue_darker#
+#set default-bg "#004d4d"    #greenish_blue#
+#set default-bg "#003333"    #greenish_blue_darker#
+
+
+
+     ##TO_Play_with  Online_scheme#
+
+##set recolor-darkcolor "#93A1A1"
+#set recolor-lightcolor "#002B36"
+#set recolor true
+
+# colors
+#set statusbar-bg "#000000"
+#set statusbar-fg "#CC0000"
+#set default-fg "#FFFFFF"
+#set default-bg "#000000" 
+
