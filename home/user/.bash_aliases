@@ -38,6 +38,12 @@ alias ydl='youtube-dl -ic'
 #Range can be given >>>> "playlist-items 3,5,8"//"--playlist-items 1-3,7,10-13"
     alias yr-list='youtube-dl -io "%(playlist_index)s-%(title)s.%(ext)s" --playlist-items '
 
+#Searching from terminal and downloading video::
+	alias ygs='youtube-dl -ic "gvsearch1: '  #using google, search & downloads first google result
+	alias ygsm='youtube-dl -ix --audio-format mp3 "gvsearch1: '
+	alias yys='youtube-dl -ic "ytsearch1: '  #using youtube, search & downloads first youtube result
+	alias yysm='youtube-dl -ix --audio-format mp3 "ytsearch1: ' 
+
 
 #For Termbin // The Terminal Pastebin
 alias tb="nc termbin.com 9999"
@@ -54,8 +60,8 @@ alias tbc="netcat termbin.com 9999 | xclip -selection c"
     alias poff='poweroff'
 
 #Controlling network(wifi) with ease:
-	alias non='nmcli radio all on'
-	alias noff='nmcli radio all off'
+	alias non='nmcli networking on && nmcli radio all on'
+	alias noff='nmcli radio all off && nmcli networking off'
 	alias ngen='nmcli general'
 
 #replacing rm power::
@@ -84,3 +90,21 @@ alias tbc="netcat termbin.com 9999 | xclip -selection c"
 	alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|percentage"'
 #Getting weather info:
 	alias weather='curl v2.wttr.in'
+
+				#**************************#
+				# Git Commands Shortcuts::
+				#**************************#
+#status
+	alias gits='git status '
+	alias gitss='git status -s'
+#add
+	alias gita='git add -A'
+#commit
+	alias gitc='git commit -m '
+	alias gitac='git add -A && git commit -m '
+#push
+	alias gitps='git push origin master'
+#pull
+	alias gitpl='git pull origin master'
+#reset --remove from staging area
+	alias gitr='git reset'
