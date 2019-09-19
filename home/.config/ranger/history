@@ -21,3 +21,5 @@ search
 search dim
 delete
 shell unzip github-ultimate\ \[FreeTutorials.Us\].zip
+shell touch link
+open_with vim
