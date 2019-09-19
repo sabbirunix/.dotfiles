@@ -32,7 +32,7 @@ set cursorline cursorcolumn
   "##### for colorschemes #####
 
 syntax on
-color dracula
+""color dracula
 set t_Co=256
 "or // "set termguicolors
 
