@@ -84,3 +84,21 @@ alias tbc="netcat termbin.com 9999 | xclip -selection c"
 	alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|percentage"'
 #Getting weather info:
 	alias weather='curl v2.wttr.in'
+
+				#**************************#
+				# Git Commands Shortcuts::
+				#**************************#
+#status
+	alias gits='git status '
+	alias gitss='git status -s'
+#add
+	alias gita='git add -A'
+#commit
+	alias gitc='git commit -m '
+	alias gitac='git add -A && git commit -m '
+#push
+	alias gitps='git push origin master'
+#pull
+	alias gitpl='git pull origin master'
+#reset --remove from staging area
+	alias gitr='git reset'
