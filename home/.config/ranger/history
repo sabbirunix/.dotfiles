@@ -20,3 +20,4 @@ find .do
 search 
 search dim
 delete
+shell unzip github-ultimate\ \[FreeTutorials.Us\].zip
