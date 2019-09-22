@@ -54,8 +54,8 @@ alias tbc="netcat termbin.com 9999 | xclip -selection c"
     alias poff='poweroff'
 
 #Controlling network(wifi) with ease:
-	alias non='nmcli radio all on'
-	alias noff='nmcli radio all off'
+	alias non='nmcli networking on && nmcli radio all on'
+	alias noff='nmcli radio all off && nmcli networking off'
 	alias ngen='nmcli general'
 
 #replacing rm power::
