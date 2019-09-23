@@ -46,3 +46,5 @@ find par
 l
 open_with zathura
 delete
+shell `
+shell mk
