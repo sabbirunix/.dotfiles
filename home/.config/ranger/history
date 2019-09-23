@@ -15,11 +15,34 @@ open_with vlc
 unmark 
 search 60
 search .dot
-open_with 
 find .do
-search 
 search dim
-delete
 shell unzip github-ultimate\ \[FreeTutorials.Us\].zip
 shell touch link
 open_with vim
+shell sugg
+shell mkdir sugg
+search .dotfi
+search syntax
+search highlight
+search comple
+search zsh
+search autosugg
+find autosu
+search .zsh
+search hall
+search 
+find hal
+search f
+find fa
+search fix
+find mix
+search bang
+open_with 
+shell 
+open_with 2
+open_with argue
+find par
+l
+open_with zathura
+delete
