@@ -1,9 +1,6 @@
 *~
 *.swp
 ~/.dotfiles/home/user/.vim/colors
-~/.dotfiles/home/.config/ranger/history*
-home/.config/ranger/history*
+~/.dotfiles/home/.config/ranger/*
 ~/.dotfiles/home/.config/qBittorrent/*
-home/.config/qBittorrent/*
 ~/.dotfiles/home/.config/vlc/*
-home/.config/vlc/*
