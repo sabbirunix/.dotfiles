@@ -38,6 +38,12 @@ alias ydl='youtube-dl -ic'
 #Range can be given >>>> "playlist-items 3,5,8"//"--playlist-items 1-3,7,10-13"
     alias yr-list='youtube-dl -io "%(playlist_index)s-%(title)s.%(ext)s" --playlist-items '
 
+#Searching from terminal and downloading video::
+	alias ygs='youtube-dl -ic "gvsearch1: '  #using google, search & downloads first google result
+	alias ygsm='youtube-dl -ix --audio-format mp3 "gvsearch1: '
+	alias yys='youtube-dl -ic "ytsearch1: '  #using youtube, search & downloads first youtube result
+	alias yysm='youtube-dl -ix --audio-format mp3 "ytsearch1: ' 
+
 
 #For Termbin // The Terminal Pastebin
 alias tb="nc termbin.com 9999"
