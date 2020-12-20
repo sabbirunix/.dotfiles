@@ -33,7 +33,7 @@ set cursorline cursorcolumn
 
 syntax on
 ""color dracula
-set t_Co=256
+"set t_Co=256
 "or // "set termguicolors
 
 
@@ -50,6 +50,10 @@ set foldlevel=2
 "inoremap ( ()<Esc>ha
 "inoremap " ""<Esc>ha
 
+"Mapping jk & kj to escape in insert mode
+:imap jk <Esc>
+:imap kj <Esc>
+
 "To open buffers in new tab"
 tab sball
 
@@ -62,16 +66,17 @@ filetype plugin indent on
 "=============================================="
 "=============================================="
 
-set background=dark
-colorscheme wombat256i
+"set background=dark
+"colorscheme wombat256i
 "colorscheme molokai
+colorscheme dracula
 ""highlight CursorLine ctermbg=8 cterm=NONE
 
 "using supertab"
 ""source ~/.vim/autoload/supertab.vim
 
 
-set backup
+"set backup
 
 " Centralize backups, swapfiles, and undo history
 ""set backupdir=~/.vim/backups
@@ -129,3 +134,4 @@ let g:airline_powerline_fonts = 1
 " 		For NerdCommenter"
 "================================="
 filetype plugin on
+

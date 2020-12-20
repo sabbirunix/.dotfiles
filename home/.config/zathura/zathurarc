@@ -9,16 +9,17 @@ set recolor true
 set recolor-keephue true
 #set recolor-lightcolor "#ffffff"
 #set recolor-darkcolor "#708ca2"
-#set recolor-darkcolor "#808080"
+set recolor-darkcolor "#808080"
 
 
 #Works_Best
 #set recolor-lightcolor "#d9d9d9"    # bright 85%
-set recolor-lightcolor "#cccccc"   #  bright 80%
+#set recolor-lightcolor "#cccccc"   #  bright 80%
+set recolor-lightcolor "#b6b6b6"    # bright 70  #latest
 #set recolor-lightcolor "#a6a6a6"    # bright 65%
 #set recolor-lightcolor "#999999"    # bright 60%
 #set recolor-lightcolor "#808080"    # bright 50%
-set recolor-darkcolor "#333333"
+set recolor-darkcolor "#333333"   #latest
 
 
 
@@ -27,7 +28,7 @@ set recolor-reverse-video true
 #set default-bg "#2a2c2e"   #default#
 #
 #set default-bg "#1e5362"   #blackish_blue#
-set default-bg "#12323b"    #blackish_blue_darker#
+set default-bg "#12323b"    #blackish_blue_darker# 
 #set default-bg "#004d4d"    #greenish_blue#
 #set default-bg "#003333"    #greenish_blue_darker#
 
@@ -45,3 +46,6 @@ set default-bg "#12323b"    #blackish_blue_darker#
 #set default-fg "#FFFFFF"
 #set default-bg "#000000" 
 
+set tabbed -c zathura -e
+set statusbar-basename true
+set window-title-home-tilde true

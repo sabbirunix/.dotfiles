@@ -1,0 +1,41 @@
+# Location of user-defined bindings: ~/.config/mpv/input.conf
+#
+# Lines starting with # are comments. Use SHARP to assign the # key.
+# Copy this file and uncomment and edit the bindings you want to change.
+#
+# List of commands and further details: DOCS/man/input.rst
+# List of special keys: --input-keylist
+# Keybindings testing mode: mpv --input-test --force-window --idle
+#
+# Use 'ignore' to unbind a key fully (e.g. 'ctrl+a ignore').
+
+
+#Vim like bindings
+j             add volume -2
+k             add volume +2
+l             seek  2
+h             seek -2
+;             seek  60
+g             seek -60
+
+# Subtitle and Audio Cycle:
+v             cycle sub                            # cycle through subtitles
+b             cycle audio                      # switch audio streams
+
+#Crazy looping
+c             ab-loop                              # Set/clear A-B loop points
+
+#Playlist jump
+n    playlist-next                    # skip to next file
+p    playlist-prev                        # skip to previous file
+
+#Show Playlist Items
+ctrl+l        show_text ${playlist}
+
+#Quit and resumeable-quit
+Q quit
+q quit-watch-later
+
+#Rotate video orientation
+alt+r cycle_values video-rotate "90" "180" "270" "0"
+

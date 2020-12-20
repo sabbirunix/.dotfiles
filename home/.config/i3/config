@@ -1,0 +1,401 @@
+# mod key to windows_key
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 11
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+set $term i3-sensible-terminal
+bindsym $mod+Return exec $term
+
+# kill focused window
+bindsym $mod+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym Mod1+Tab focus right
+#bindsym Mod1+Shift+Tab focus next right   #documented but maybe not updated in ubuntu pack
+
+# move focused window
+bindsym $mod+Shift+h move left   60
+bindsym $mod+Shift+j move down   60
+bindsym $mod+Shift+k move up     60
+bindsym $mod+Shift+l move right  60
+
+# Split toggle
+bindsym $mod+t			split toggle
+
+## split in horizontal orientation
+#bindsym $mod+Shift+v split h
+#
+## split in vertical orientation
+#bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+space floating toggle
+# change focus between tiling / floating windows
+bindsym $mod+shift+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# reload the configuration file
+bindsym $mod+Shift+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+c restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+# resize mode
+#bindsym $mod+r mode "resize"
+#mode "resize" {
+#        bindsym h resize shrink width  5 px or 5 ppt
+#        bindsym j resize grow height   5 px or 5 ppt
+#        bindsym k resize shrink height 5 px or 5 ppt
+#        bindsym l resize grow width    5 px or 5 ppt
+#        
+#        # back to normal: Enter or Escape
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+
+# Resizing windows in i3 using keyboard only
+# https://unix.stackexchange.com/q/255344/150597
+
+ #Resizing by 1
+bindsym $mod+Mod1+h resize shrink width  1 px or 1 ppt
+bindsym $mod+Mod1+j resize grow height   1 px or 1 ppt
+bindsym $mod+Mod1+k resize shrink height 1 px or 1 ppt
+bindsym $mod+Mod1+l resize grow width    1 px or 1 ppt
+
+bindsym Mod1+h resize shrink width  15 px or 15 ppt
+bindsym Mod1+j resize grow height   15 px or 15 ppt
+bindsym Mod1+k resize shrink height 15 px or 15 ppt
+bindsym Mod1+l resize grow width    15 px or 15 ppt
+
+
+# Resizing by 10
+bindsym $mod+Ctrl+h resize shrink width  30 px or 30 ppt
+bindsym $mod+Ctrl+j resize grow height   30 px or 30 ppt
+bindsym $mod+Ctrl+k resize shrink height 30 px or 30 ppt
+bindsym $mod+Ctrl+l resize grow width    30 px or 30 ppt
+
+################################################################
+##################### Workspace Settings #######################
+################################################################
+set $w1 "1: Terminal"
+set $w2 "2: Ranger"
+set $w3 "3: Editor"
+set $w4 "4: Media"
+set $w5 "5: Android"
+set $w6 "6: Others"
+set $w7 "7: Torrent"
+set $w8 "8: Chromium"
+set $w9 "9: Firefox"
+set $w10 "10: Virtual"
+
+#Workspace switching with tab
+bindsym $mod+Tab workspace back_and_forth
+#bindsym $mod+Tab workspace next
+#bindsym $mod+Shift+Tab workspace prev
+
+# switch to workspace
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
+bindsym $mod+0 workspace $w10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7
+bindsym $mod+Shift+8 move container to workspace $w8
+bindsym $mod+Shift+9 move container to workspace $w9
+bindsym $mod+Shift+0 move container to workspace $w10
+
+################################################################################
+####################### Workspace Assignment Settings ##########################
+################################################################################
+# default workspaces
+#assign [class="mpv"]                    $w4
+assign [class="studio"]                 $w5
+assign [class="qBittorrent"]            $w7
+assign [class="Chromium-browser"]       $w8
+assign [class="brave-browser"]          $w8
+assign [class="Firefox"]                $w9
+## enable floating mode and move container to workspace 4
+#for_window [class="^evil-app$"] floating enable, move container to workspace 4
+
+
+############### custom window settings #####################
+#for_window [class="^URxvt$" instance="scratchpad"] border 1pixel; move scratchpad
+for_window [class="Chromium-browser"] border none layout tabbed
+for_window [class="Firefox"] border none layout tabbed
+for_window [class="studio"] border none
+for_window [class="mpv"] fullscreen disable, floating enable, resize set 1366 768, focus, border none, move position center;
+#for_window [title="Xfce4-terminal"] border none;
+#for_window [class="Xfce4-terminal"]  border none;
+for_window [class="Xfce4-terminal"]  border pixel 5;
+#for_window [title="Lingea Lexicon 5$"] border none
+#for_window [class="PacketTracer7"] fullscreen disable, floating enable, resize set 1366 768, move position center;
+for_window [class="PacketTracer7"] fullscreen disable, floating enable, move position center;
+for_window [title="Android Emulator"] fullscreen disable, floating enable, move position center;
+for_window [ workspace="0" ] floating enable
+#
+#floating mode settings:
+#floating_minimum_size 1366 x 768
+#floating_maximum_size 1680 X 980
+
+
+#################################################
+############### Volume-Control ##################
+#################################################
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+
+## Media player controls
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+#
+
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioStop exec mpc stop
+
+
+#####################  binding rofi instead of dmenu ##################### 
+bindsym $mod+d  exec rofi -show drun   -width 100 -location 1 -lines 5 -eh 2 -bw 2 -yoffset -2 -font "Sans Display 13"
+bindsym $mod+Shift+d  exec rofi -show run -width 100 -location 1 -lines 5 -eh 2 -bw 2 -yoffset -2 -font "Sans Display 13"
+
+
+####################################################################
+###################### i3-window look and feel######################
+####################################################################
+set $bg-color 	         #000000
+#set $bg-color 	         #2f343f
+#set $inactive-bg-color   #2f343f
+set $inactive-bg-color   #2f343f
+#set $text-color          #f3f4f5
+set $text-color          #f0ff09
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+#client.focused          $bg-color           $bg-color          $text-color          #00ff00
+#client.focused           $bg-color           #2f343f          $text-color          #eb0882
+#client.focused           $bg-color           #333399          $text-color          #00ff00
+#client.focused           $bg-color           #99b3e6          $text-color          #00ff00
+#client.focused           $bg-color           #00b3b3          $text-color          #00ff00
+#client.focused           $bg-color           #cccccc          $text-color          #00ff00
+#client.focused           $bg-color           #339966          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color         ##ff0000
+####################################################################################
+#########################  i3 status-bar >> customization ##########################
+#bar {
+#status_command i3status
+##status_command i3blocks -c ~/.config/i3/i3blocks.conf
+##status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+##mode hide
+#position top
+##output primary
+##tray_output none
+##font pango:DejaVu Sans Mono 10
+##separator_symbol “⁞”
+#
+#	colors {
+##background $bg-color
+#		background #2f2f2f
+#	 	separator #0f1f1f
+#		#                  border             background         text
+#		focused_workspace  $bg-color          $bg-color          $text-color
+#		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#	}
+#}
+
+
+##################### border changing ######################
+bindsym $mod+b border toggle
+
+################### i3status bar toggle #####################
+bindsym $mod+n bar mode toggle
+
+
+#########################################
+############## Autostart ################
+#########################################
+#exec firefox
+#exec chromium-browser
+#exec qbittorrent
+exec_always --no-startup-id compton
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+############   wallpaper setting ###########
+############################################
+$feh --randomize  ~/.wp/*
+# alias
+set $feh exec_always --no-startup-id feh --bg-scale
+#set $feh exec_always --no-startup-id feh --bg-fill
+
+
+#############################################
+############## i3 Gap Setting ###############
+#############################################
+gaps inner 4
+gaps outer 0
+smart_gaps on
+smart_borders no_gaps
+#for_window [class="^.*"] border pixel 2
+bindsym   $mod+g    gaps inner current plus 5
+bindsym   $mod+Shift+g    gaps inner current minus 5
+
+
+
+#######################################################
+############## Custom Scripts Key-Bind ################
+#######################################################
+
+########## Mountings disks without root previledge #################
+bindsym $mod+Shift+m   exec   udisksctl mount -b /dev/sdb1  /dev/sdc1 /dev/sdd1
+
+################ MPV - play copied link in mpv script ################## 
+bindsym $mod+m   exec     /home/sabbir/.config/mpv/mpv-play.sh
+
+##################### Brightness Setting #########################
+#
+#Enabling root previledge without password:>>
+#go to sudoers file and add the line
+#>>>>>
+# $sudo visudo -f /etc/sudoers
+## sabbir ALL=(root) NOPASSWD: /usr/bin/brightnessctl
+bindsym $mod+i exec (sudo brightnessctl s +2%)
+bindsym $mod+shift+i exec  (sudo brightnessctl s 2%-)
+
+
+##################### Screenshot with scrot ########################
+# Multi-screen screenshots with scrot
+bindsym --release Print exec scrot $capfull  # All screens
+set $capfull 'screenshot_%s.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' 
+
+# OSX-like area selection screenshots
+bindsym --release Shift+Print exec scrot -s $capPart  # Area selection
+set $capPart 'screenshot_%s.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' 
+
+################# WEBCAM through ffplay ####################
+bindsym $mod+shift+w  exec (killall ffplay || ffplay /dev/video0)
+for_window [class="ffplay" title="/dev/video0"] fullscreen disable, border none, floating enable, move position  1615 860, resize set 305 220;
+for_window [title="video0 - mpv"] fullscreen disable, border none, floating enable, move position  1500 800, resize set 400 280;
+for_window [instance="video0 - mpv"] fullscreen disable, border none, floating enable, move position  1500 800, resize set 400 280;
+
+##################  ScreenRecording with ffmpeg  ##################
+set $frec (ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac /home/sabbir/records/screen_`date +%s`.mp4) 
+bindsym $mod+y  exec ( notify-send -t 500  "FFMPEG Started Recording" && $frec)
+bindsym $mod+shift+y exec (killall ffmpeg && notify-send -t 1500  "Recording Finished")
+
+########### Ranger and other apps  shortcut ############
+bindsym $mod+u 			exec $term -e  ranger
+bindsym Mod1+s    sticky toggle
+bindsym $mod+shift+f			exec --no-startup-id firefox --private-window
+bindsym $mod+c			exec --no-startup-id chromium-browser
+bindsym $mod+shift+b			exec --no-startup-id brave-browser
+############# toggling the mouse/ touchpad ###############
+bindsym $mod+shift+t	exec --no-startup-id ~/.local/bin/touch-toggle.sh
+
+
+
+
+
+######################################
+######### Multimedia Mode #############
+######################################
+bindsym $mod+r mode "Playerctl"
+mode "Playerctl" {
+        bindsym n exec   playerctl next
+        bindsym p exec   playerctl previous
+        bindsym space exec   playerctl play-pause
+#playlis
+        #bindsym shift+l exec   playerctl loop playlist
+        bindsym shift+l exec   playerctl loop track
+#volume
+        bindsym j exec   playerctl volume 0.1-
+        bindsym k exec   playerctl volume 0.1+
+        bindsym m exec   playerctl volume 0
+        bindsym shift+j exec   playerctl volume 0.01-
+        bindsym shift+k exec   playerctl volume 0.01+
+#position seeking 
+        bindsym l exec --no-startup-id  playerctl position 5+
+        bindsym h exec --no-startup-id  playerctl position 5-
+        bindsym g         exec --no-startup-id  playerctl position 60+
+        bindsym semicolon exec --no-startup-id  playerctl position 60+
+        #bindsym --release l exec --no-startup-id  playerctl position 5+
+        #bindsym --release h exec --no-startup-id  playerctl position 5-
+        #bindsym --release ; exec --no-startup-id  playerctl position 60+
+        #bindsym --release g exec --no-startup-id  playerctl position 60-
+
+ # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+bindsym $mod+semicolon mode "cmus-remote"
+mode "cmus-remote" {
+		bindsym space exec cmus-remote --pause   # toggle play-pause
+		bindsym n exec cmus-remote --next	 # next song
+		bindsym p exec cmus-remote --prev
+		bindsym r exec cmus-remote --repeat  #toggle repeat
+		bindsym s exec cmus-remote --shuffle #toggle shuffle
+#volume control
+		bindsym k exec cmus-remote -v +5%
+		bindsym j exec cmus-remote -v -5%
+#Seek Position
+		bindsym l exec cmus-remote -k +5
+		bindsym h exec cmus-remote -k -5
+		bindsym semicolon exec cmus-remote -k +60
+		bindsym g         exec cmus-remote -k -60
+#Extracting File Name Info
+		bindsym i exec mus-remote -Q |  grep "^file"  |  awk -F "/" '{print $NF}'
+
+ # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+#bindsym $mod+z exec --no-startup-id    ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0  -i ~/River-flows.mp3  -c:v libx264 -preset ultrafast -c:a aac /home/sabbir/records/mah_rec.mp4 -y
+bindsym $mod+p exec screenkey
+bindsym $mod+shift+p exec killall -9 screenkey
+

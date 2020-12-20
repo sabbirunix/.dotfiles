@@ -1,0 +1,8 @@
+loop=yes
+volume=40
+#resume=yes
+#autofit=854
+#autofit=854
+volume-max=250
+save-position-on-quit
+blend-subtitles=yes

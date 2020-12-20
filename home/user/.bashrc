@@ -151,7 +151,8 @@ fi
 ################################################################################
 
 #Setting java variables::
-JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+#JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+JAVA_HOME="/usr/lib/jvm/jdk-8u231"
 export JAVA_HOME
 export PATH=$PATH:$JAVA_HOME/bin
 
@@ -168,4 +169,7 @@ bind '"\e[Z":menu-complete-backward'	# Shift+Tab: Cycle backwards
 #ENABLE_CORRECTION="true"
 shopt -s cdspell 
 
+#cmdfu() {curl "http://www.commandlinefu.com/commands/matching/$(echo "$@" \
+#        | sed 's/ /-/g')/$(echo -n $@ | base64)/plaintext" ;}
 
+#cmdfu() {curl "http://www.commandlinefu.com/commands/matching/$(echo "$@" | sed 's/ /-/g')/$(echo -n $@ | base64)/plaintext" ;}
