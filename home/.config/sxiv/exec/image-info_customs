@@ -1,0 +1,26 @@
+############  Showing the image size in the status bar ##############
+#Place the following executable script in `~/.config/sxiv/exec/image-info`
+#and make sure that you have the `exiv2` package installed:
+
+#~/.config/sxiv/exec/image-info
+#!/bin/sh
+
+# Example for ~/.config/sxiv/exec/image-info
+# Called by sxiv(1) whenever an image gets loaded,
+# with the name of the image file as its first argument.
+# The output is displayed in sxiv's status bar.
+
+s=" | " # field separator
+
+filename=$(basename "$@")
+filesize=$(du -Hh "$@" | cut -f 1)
+
+# The '[0]' stands for the first frame of a multi-frame file, e.g. gif.
+geometry=$(identify -format '%wx%h' "$@[0]")
+
+tags=$(exiv2 -q pr -pi "$@" | awk '$@~"Keywords" { printf("%s,", $4); }')
+tags=${tags%,}
+
+echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}"
+
+

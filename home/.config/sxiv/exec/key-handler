@@ -1,0 +1,41 @@
+#!/bin/sh
+# ~/.config/sxiv/exec/key-handler
+
+while read file
+do
+        case "$1" in
+        "C-d")
+                #mv "$file" ~/.trash ;;
+                mv "$file" ~/.local/share/Trash/files;;
+        "C-r")
+                convert -rotate 90 "$file" "$file" ;;
+        "C-c")
+                echo -n "$file" | xclip -selection clipboard ;;
+        "C-w")
+                nitrogen --save --set-zoom-fill "$file" ;;
+                #nitrogen --save --set-zoom "$file" ;;
+        esac
+done
+
+
+########### source::: https://wiki.archlinux.org/index.php/Sxiv ##########
+######Assigning keyboard shortcuts::
+#sxiv supports external key events. First you have to press Ctrl-x to send the next 
+#key to the external key-handler. The external key-handler requires an executable 
+#file ~/.config/sxiv/exec/key-handler and passes the key combination pressed via 
+#argument as well the names of the currently marked images as stdin (or, if none 
+#are marked, the currently selected image).
+#
+#In this example, we will add the bindings Ctrl+d to execute mv filename ~/.trash,
+#Ctrl+c to copy the current images' names to the clipboard with xclip, and Ctrl+w 
+#to set the current wallpaper with nitrogen. Obviously, some commands may only make 
+#sense with a single image as an argument, so you may want to revise this to handle 
+#cases when those are passed more than one.
+
+
+#Be sure to mark the script as executable
+#	$ chmod +x ~/.config/sxiv/exec/key-handler
+#
+#Create .trash folder if it does not exist:
+#
+#	$ mkdir ~/.trash

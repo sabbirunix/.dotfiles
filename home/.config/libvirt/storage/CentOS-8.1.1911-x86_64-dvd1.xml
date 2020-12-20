@@ -1,0 +1,19 @@
+<!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh pool-edit CentOS-8.1.1911-x86_64-dvd1
+or other application using the libvirt API.
+-->
+
+<pool type='dir'>
+  <name>CentOS-8.1.1911-x86_64-dvd1</name>
+  <uuid>d0758f59-874d-4169-9ffc-1ecb52e460e1</uuid>
+  <capacity unit='bytes'>0</capacity>
+  <allocation unit='bytes'>0</allocation>
+  <available unit='bytes'>0</available>
+  <source>
+  </source>
+  <target>
+    <path>/mnt/Virtual_Machines/Operating-Systems-ISO/CentOS-8.1.1911-x86_64-dvd1</path>
+  </target>
+</pool>

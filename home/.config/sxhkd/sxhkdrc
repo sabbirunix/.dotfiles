@@ -1,0 +1,20 @@
+# mpv control
+# https://alexherbo2.github.io/config/mpv/control-mpv-through-command-line/
+
+super + p: {space, p, n, shift+n, g, q}
+
+#super + p: {space, \    #play/pause
+#            p, \        # volume control
+#            n, \        # next track
+#            shift+n, \  # prev track
+#            g, \        # track start
+#            q}          # stop
+
+    { echo cycle pause | socat - ~/.config/mpv/socket & pkill -ALRM sxhkd, \
+      tdrop -ma -n volume -f '-e pulsemixer' -w 28% -h 33% -y 7% -x 68% termite\
+          & pkill -ALRM sxhkd, \
+      echo playlist-next | socat - ~/.config/mpv/socket, \
+      echo playlist-prev | socat - ~/.config/mpv/socket, \
+      echo seek 0 absolute-percent | socat - ~/.config/mpv/socket, \
+      echo stop | socat - ~/.config/mpv/socket}
+
