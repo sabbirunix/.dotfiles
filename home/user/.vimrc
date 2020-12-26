@@ -69,7 +69,7 @@ filetype plugin indent on
 "set background=dark
 "colorscheme wombat256i
 "colorscheme molokai
-colorscheme dracula
+"colorscheme dracula
 ""highlight CursorLine ctermbg=8 cterm=NONE
 
 "using supertab"
@@ -135,3 +135,5 @@ let g:airline_powerline_fonts = 1
 "================================="
 filetype plugin on
 
+colorscheme one
+"let g:airline_theme=angr

@@ -139,3 +139,6 @@ sdc() {
 	fold --width=$(tput cols) | \
 	less -FRX
 }
+
+#alias for clean up the memory 
+alias clean='sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"'

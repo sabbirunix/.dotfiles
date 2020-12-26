@@ -5,3 +5,7 @@ home/user/.vim/colors
 home/.config/ranger/*
 home/.config/qBittorrent/*
 home/.config/vlc/*
+/home/sabbir/.dotfiles/home/.config/mpv/watch_later
+/home/sabbir/.dotfiles/home/.config/ranger/tagged
+/home/sabbir/.dotfiles/home/.config/ranger/history
+

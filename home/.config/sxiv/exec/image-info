@@ -11,7 +11,8 @@
 # with the name of the image file as its first argument.
 # The output is displayed in sxiv's status bar.
 
-s=" | " # field separator
+s="  |  " # field separator
+c="  %60.20s" # field separator #just some custom shit
 
 filename=$(basename "$1")
 filesize=$(du -Hh "$1" | cut -f 1)
@@ -22,6 +23,9 @@ geometry=$(identify -format '%wx%h' "$1[0]")
 tags=$(exiv2 -q pr -pi "$1" | awk '$1~"Keywords" { printf("%s,", $4); }')
 tags=${tags%,}
 
-echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}"
+#echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${c}${c}${filename}"
+printf "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${c}${c}${filename}"
+
+#printf '%4.30s\n' 
 
 
